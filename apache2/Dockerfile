@@ -28,8 +28,6 @@ RUN echo "ServerName localhost" | sudo tee /etc/apache2/apache2.conf
 
 EXPOSE 80
 
-# CMD ["apache2", "-DFOREGROUND"]
-
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
 CMD ["/run.sh"]

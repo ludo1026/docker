@@ -24,7 +24,7 @@ RUN find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
     s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
 ' '{}' ';'
 
-RUN echo "ServerName localhost" | sudo tee /etc/apache2/apache2.conf
+RUN echo "ServerName localhost" | sudo tee -a /etc/apache2/apache2.conf
 
 EXPOSE 80
 

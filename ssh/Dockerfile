@@ -1,5 +1,6 @@
 FROM ubuntu:14.04
  
+# --- docker build ---
 # Install
 RUN apt-get update
 RUN apt-get install -y locate nano
@@ -13,5 +14,6 @@ RUN echo 'root:docker' |chpasswd
  
 # Network : port 22
 EXPOSE 22
-
+ 
+# --- docker run ---
 CMD    ["/usr/sbin/sshd", "-D"]

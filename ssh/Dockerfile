@@ -13,8 +13,5 @@ RUN echo 'root:docker' |chpasswd
  
 # Network : port 22
 EXPOSE 22
- 
-# Shared folder
-VOLUME ["/data"]
- 
+
 CMD    ["/usr/sbin/sshd", "-D"]

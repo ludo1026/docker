@@ -1,10 +1,10 @@
-FROM ssh	
+FROM ssh
 
 # --- docker build ---
 
 RUN apt-get update
 RUN apt-get install -y apache2
- 
+
 # let's copy a few of the settings from /etc/init.d/apache2
 ENV APACHE_CONFDIR /etc/apache2
 ENV APACHE_ENVVARS $APACHE_CONFDIR/envvars
@@ -16,9 +16,9 @@ ENV APACHE_PID_FILE $APACHE_RUN_DIR/apache2.pid
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV LANG C
- 
+
 RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
- 
+
 # make CustomLog (access log) go to stdout instead of files
 #  and ErrorLog to stderr
 RUN find "$APACHE_CONFDIR" -type f -exec sed -ri ' \

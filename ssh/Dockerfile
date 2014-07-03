@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 # --- docker build ---
 # Install
 RUN apt-get update
-RUN apt-get install -y locate nano
+RUN apt-get install -y locate nano software-properties-common
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
  

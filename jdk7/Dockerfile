@@ -1,6 +1,7 @@
 FROM ssh
 
 # --- docker build ---
+RUN apt-get install -y software-properties-common
 # Install Java.
 RUN \
   echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \

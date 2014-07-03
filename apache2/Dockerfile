@@ -1,5 +1,7 @@
 FROM ssh	
- 
+
+# --- docker build ---
+
 RUN apt-get update
 RUN apt-get install -y apache2
  
@@ -30,4 +32,6 @@ EXPOSE 80
 
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
+
+# --- docker run ---
 CMD ["/run.sh"]

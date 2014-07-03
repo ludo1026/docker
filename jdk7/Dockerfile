@@ -1,5 +1,6 @@
 FROM ssh
 
+# --- docker build ---
 # Install Java.
 RUN \
   echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
@@ -8,5 +9,5 @@ RUN \
   apt-get update && \
   apt-get install -y oracle-java7-installer
 
-# Define default command.
+# --- docker run ---
 CMD ["/usr/sbin/sshd", "-D"]

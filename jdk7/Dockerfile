@@ -9,4 +9,4 @@ RUN \
   apt-get install -y oracle-java7-installer
 
 # Define default command.
-CMD ["bash"]
+CMD ["/usr/sbin/sshd", "-D"]
